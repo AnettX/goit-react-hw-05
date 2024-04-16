@@ -12,6 +12,7 @@ const MoviesPage = () => {
   const handleSubmit = (value) => {
     setSearchParams({ query: value });
   };
+
   const query = searchParams.get("query");
 
   useEffect(() => {

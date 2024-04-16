@@ -28,3 +28,23 @@ export const getSearchMovie = async (query = "") => {
 
   return data.results;
 };
+
+export const getDetailsMovieById = async (movieId = "") => {
+  const { data } = await axios.get(`/movie/${movieId}`);
+
+  return data;
+};
+
+export const getDetailsMovieCast = async (movieId = "") => {
+  const { data } = await axios.get(`/movie/${movieId}/credits?language=en-US`);
+
+  return data;
+};
+
+export const getDetailsMovieReviews = async (movieId = "") => {
+  const { data } = await axios.get(
+    `/movie/${movieId}/reviews?language=en-US&page=1`
+  );
+
+  return data;
+};

@@ -5,7 +5,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 // const HomePage = lazy (()=> import ("./pages/HomePage"));
 // <Suspense fallback={<Loader />}> <Routes> </Suspense>
 
-import MovieDetailsPage from "./pages/MovieDetailsPage";
+import MovieDetailsPage from "./pages/MovieDetailsPage/MovieDetailsPage";
 import Navigation from "./components/Navigation/Navigation";
 import MovieCast from "./components/MovieCast/MovieCast";
 import MovieReviews from "./components/MovieReviews/MovieReviews";
