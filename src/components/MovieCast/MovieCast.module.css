@@ -1,0 +1,28 @@
+.castList {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.imgCast {
+  width: 200px;
+  margin: auto;
+  display: block;
+}
+
+.castItem {
+  width: 200px;
+  border: 1px solid grey;
+}
+
+.notImgCast {
+  width: 200px;
+  height: 300px;
+  background-color: aliceblue;
+  color: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

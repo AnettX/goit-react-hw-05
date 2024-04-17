@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getDetailsMovieReviews } from "../../services/api";
+import Loader from "../Loader";
+import css from './MovieReviews.module.css'
 
 const MovieReviews = () => {
   const { movieId } = useParams();
@@ -25,16 +27,22 @@ const MovieReviews = () => {
 
   return (
     <div>
+      <div>{loading && <Loader />}</div>
       <ul>
-        {Array.isArray(movieReviews) &&
-          movieReviews.map((review) => {
-            return (
+        <>
+          {Array.isArray(movieReviews) && movieReviews.length > 0 ? (
+            movieReviews.map((review) => (
               <li key={review.id}>
                 <p>Author: {review.author}.</p>
                 <p>{review.content}</p>
               </li>
-            );
-          })}
+            ))
+          ) : (
+            <li className={css.reviewsNotFindItem}>
+              We don&apos;t have any reviews for this movie.
+            </li>
+          )}
+        </>
       </ul>
     </div>
   );

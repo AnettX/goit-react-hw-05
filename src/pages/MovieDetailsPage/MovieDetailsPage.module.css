@@ -1,23 +1,27 @@
-.filmContainer {
-
+.filmInfoContainer {
+  margin-top: 12px;
+  display: flex;
+  border-bottom: 1px solid grey;
 }
 
 .filmImg {
-    
+  border-radius: 2px;
+  margin-right: 16px;
+  margin-bottom: 10px;
 }
 
 .filmInfo {
-
 }
 
-.filmTitle{
-
+.filmTitle {
 }
 
 .overviewTitle {
-
 }
 
-.genresTitle{
+.genresTitle {
+}
 
+.addInfoContainer {
+  border-bottom: 1px solid grey;
 }

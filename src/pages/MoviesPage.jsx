@@ -3,6 +3,7 @@ import SearchBar from "../components/SearchBar/SearchBar";
 import { useEffect, useState } from "react";
 import { getSearchMovie } from "../services/api";
 import MovieList from "../components/MovieList/MovieList";
+import Loader from "../components/Loader";
 
 const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -34,6 +35,7 @@ const MoviesPage = () => {
   return (
     <div>
       <SearchBar handleSubmit={handleSubmit} />
+      {loading && <Loader />}
       <MovieList filmList={movies} />
     </div>
   );
