@@ -1,5 +1,11 @@
-import { useEffect, useState } from "react";
-import { useParams, Outlet, NavLink, Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import {
+  useParams,
+  Outlet,
+  NavLink,
+  Link,
+  useLocation,
+} from "react-router-dom";
 import { getDetailsMovieById } from "../../services/api";
 import Loader from "../../components/Loader";
 import css from "./MovieDetailsPage.module.css";
@@ -8,6 +14,8 @@ const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [loading, setLoading] = useState(false);
   const [movieDetails, setMovieDetails] = useState();
+  const location = useLocation();
+  const backLinkRef = useRef(location.state ?? "/");
 
   useEffect(() => {
     if (!movieId) return;
@@ -29,7 +37,7 @@ const MovieDetailsPage = () => {
     movieDetails && (
       <div className={css.filmContainer}>
         <div>{loading && <Loader />}</div>
-        <Link to="/">🔙Go home</Link>
+        <Link to={backLinkRef.current}>🔙Go home</Link>
         <div className={css.filmInfoContainer}>
           <img
             src={`https://image.tmdb.org/t/p/w500${movieDetails.backdrop_path}`}
